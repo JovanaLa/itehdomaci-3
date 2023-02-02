@@ -1,12 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import HomeSection from './components/HomeSection';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <HomeSection></HomeSection>
-    </div>
+   
+  <BrowserRouter className="App">
+  <NavBar></NavBar>
+  <Routes>
+    <Route
+      path="/"
+      element={<HomeSection />}
+    />
+  </Routes>
+</BrowserRouter>
   );
 }
 
