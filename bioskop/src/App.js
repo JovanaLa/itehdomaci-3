@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import React from 'react';
 import Program from './components/pages/Program';
 import Locations from './components/pages/Locations';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       path="/"
       element={<HomeSection />}
     />
-    <Route path="/" element={<Program />}/>
+    <Route path="/program" element={<Program />}/>
       <Route path="/locations" element={<Locations />}/>
   </Routes>
+  <Footer></Footer>
 </BrowserRouter>
   );
 }

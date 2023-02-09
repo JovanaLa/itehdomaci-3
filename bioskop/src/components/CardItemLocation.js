@@ -14,13 +14,13 @@ function CardItem({obj, type}) {
           </figure>
           <div className='cards__item__info'>
             <p className='cards__item__text'>{obj.text}</p>
-            {type == 'movies' ? <h5 className='cards__item__title'>{obj.name}</h5> : <></> }
+            {type == '' ? <h5 className='cards__item__title'>{obj.name}</h5> : <></> }
             {type == 'movies' ? <></> : 
               <div>
                 <ul>
                 <li>
-                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--medium' link='/program'>
-                     Vidi više informacija
+                <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--medium' link='/locations'>
+                    Poseti bioskop
                     </Button>
                 </li>
                 </ul>

@@ -1,29 +1,10 @@
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
-import avatar from '../assets/avatar.png';
-import oluja from '../assets/oluja.jpg';
-import oto from '../assets/oto.jpg';
 
-function Cards() {
 
-    const movies = [
-        {
-            name: 'Avatar',
-            text: 'Avantura, Akcija',
-            src: avatar
-        },
-        {
-            name: 'Oluja',
-            text: 'Ratni',
-            src: oluja
-        },
-        {
-            name: 'Čovek po imenu Oto',
-            text: 'Drama',
-            src: oto
-        }
-    ];  
+function Cards({data1, data2, type}) {
+
 
   return (
     <div className='cards'>
@@ -31,14 +12,54 @@ function Cards() {
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
-            <CardItem obj={movies[0]}/>
-            <CardItem obj={movies[1]}/>
-            <CardItem obj={movies[2]}/>
-          </ul>
+          {
+             data1.map(item => (<CardItem obj={item} type={type} />))
+           }
+</ul>
+{
+            data2 != null ? 
+            <ul className='cards__items'>
+              {
+                data2.map(item => (<CardItem obj={item} type={type} />))
+              }
+           </ul> : <></>
+          }
+        
         </div>
       </div>
     </div>
+    
   );
+        }
+
+  function Cards2({data3, data4, type}) {
+
+
+    return (
+      <div className='cards'>
+        <h1>Repertoar</h1>
+        <div className='cards__container'>
+          <div className='cards__wrapper'>
+            <ul className='cards__items'>
+            {
+               data3.map(item => (<CardItem obj={item} type={type} />))
+             }
+  </ul>
+  {
+              data4!= null ? 
+              <ul className='cards__items'>
+                {
+                  data4.map(item => (<CardItem obj={item} type={type} />))
+                }
+             </ul> : <></>
+            }
+          
+          </div>
+        </div>
+      </div>
+      
+    );
 }
 
 export default Cards;
+

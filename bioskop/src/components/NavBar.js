@@ -25,7 +25,7 @@ function NavBar() {
             </li>
             <li>
               <Link
-                to='/reservations'
+                to='/locations'
                 className='nav-links'>
                 Lokacije
               </Link>
